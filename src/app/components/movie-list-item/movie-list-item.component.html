@@ -1,0 +1,26 @@
+<li class="movie-list-item rounded shadow-sm">
+  <header>
+    <img
+      [src]="movie.cover"
+      [alt]="movie.title"
+      class="border rounded"
+      width="250"
+    />
+  </header>
+
+  <div class="movie-item-detail">
+    <section class="movie-item-detail_text">
+      <span class="fs-5 d-block">{{ movie.title }}</span>
+      <small>{{ movie.description }}</small>
+    </section>
+
+    <footer
+      class="movie-item-detail_footer bg-dark d-flex justify-content-between align-items-center"
+    >
+      <span>{{ movie.rating }}</span>
+      <button class="btn btn-warning btn-sm" (click)="onWatchlistClick()">
+        Watchlist
+      </button>
+    </footer>
+  </div>
+</li>

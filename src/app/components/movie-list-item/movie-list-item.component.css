@@ -1,0 +1,31 @@
+.movie-list-item {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  .movie-item-detail {
+    background-color: rgba(51, 51, 51, 0.95);
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    color: white;
+  }
+  
+  .movie-item-detail_text {
+    padding: 0.45rem;
+  }
+  
+  .movie-item-detail_footer {
+      padding: 0.45rem;
+  }
+  
+  .movie-list-item:hover .movie-item-detail {
+    transform: translate3d(0, -100%, 0);
+  }
+  

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  moviesAPIURL: "https://noroff-movie-catalogue.herokuapp.com/v1/movies"
 };

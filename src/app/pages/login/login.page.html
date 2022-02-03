@@ -1,0 +1,39 @@
+<main class="container">
+  <!-- Could move this out to its own component -->
+  <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+    <fieldset class="mb-3">
+      <label for="username" class="form-label"
+        ><input
+          name="username"
+          ngModel
+          #username="ngModel"
+          type="text"
+          placeholder="What is your username?"
+          class="form-control"
+          minlength="3"
+          required
+      /></label>
+    </fieldset>
+    <div
+      id="usernameErrors"
+      *ngIf="username.invalid && (username.touched || username.dirty)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="username.errors">
+        <p class="mb-0" *ngIf="username.errors['required']">
+          Username is required
+        </p>
+        <p class="mb-0" *ngIf="username.errors['minlength']">
+          Username is required
+        </p>
+      </div>
+    </div>
+    <button
+      class="btn btn-warning"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+</main>

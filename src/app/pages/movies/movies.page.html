@@ -1,0 +1,8 @@
+<main class="container">
+  <h1>Movies</h1>
+  <app-movie-list
+    [movies]="movies"
+    (goToMovie)="onMovieClick($event)"
+
+  ></app-movie-list>
+</main>
