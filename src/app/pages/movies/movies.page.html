@@ -1,8 +1,8 @@
 <main class="container">
   <h1>Movies</h1>
+  <p>Welcome back, {{username}}</p>
   <app-movie-list
     [movies]="movies"
-    (goToMovie)="onMovieClick($event)"
-
+    (goToMovie)="onGoToMovie($event)"
   ></app-movie-list>
 </main>

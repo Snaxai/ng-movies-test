@@ -8,15 +8,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class MovieListComponent implements OnInit {
   @Input() movies: IMovie[] = [];
-
-  @Output() setFavouriteMovie: EventEmitter<IMovie> = new EventEmitter();
+  @Output() goToMovie: EventEmitter<IMovie> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  goToMovie(movie: IMovie) {
+  onMovieClick(movie: IMovie) {
     console.log('MOVIE CLICKED', movie.title);
-    this.setFavouriteMovie.emit(movie); // Notify the parent
+    this.goToMovie.emit(movie); // Notify the parent
   }
 }

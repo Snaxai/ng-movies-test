@@ -10,7 +10,7 @@ export interface IMovie {
   active: number;
 }
 
-export interface IMovieResponse {
+/* export interface IMovieResponse {
   success: boolean;
   data: IMovie[];
 }
@@ -18,4 +18,4 @@ export interface IMovieResponse {
 export interface IMovieDetailResponse {
   success: boolean;
   data: IMovie;
-}
+} */

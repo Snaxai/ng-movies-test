@@ -1,0 +1,32 @@
+<main class="container">
+  <h1>Register here</h1>
+  <form #registerForm="ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
+    <fieldset>
+      <label for="username">Username</label>
+      <input
+        ngModel
+        #username="ngModel"
+        name="username"
+        type="text"
+        minlength="4"
+        maxlength="50"
+        id="username"
+        placeholder="Johndoe"
+      />
+    </fieldset>
+    <fieldset>
+      <label for="password">Username</label>
+      <input
+        ngModel
+        #password="ngModel"
+        name="password"
+        type="text"
+        minlength="5"
+        maxlength="50"
+        id="password"
+        placeholder="*****"
+      />
+    </fieldset>
+    <button [disabled]="registerForm.invalid">Register</button>
+  </form>
+</main>

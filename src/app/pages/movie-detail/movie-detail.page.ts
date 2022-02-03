@@ -7,11 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./movie-detail.page.css'],
 })
 export class MovieDetailPage implements OnInit {
-
   constructor(private route: ActivatedRoute) {
-    const movieId: string = this.route.snapshot.paramMap.get("movieId") ?? ""
+    const movieId: string = this.route.snapshot.paramMap.get('movieId') ?? '';
   }
-
 
   ngOnInit(): void {}
 }

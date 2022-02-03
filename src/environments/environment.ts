@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  moviesAPIURL: "https://noroff-movie-catalogue.herokuapp.com/v1/movies"
+  moviesAPIURL: 'https://noroff-movie-catalogue.herokuapp.com/v1',
 };

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { IMovie, IMovieDetailResponse } from './../models/movie.model';
+import { IMovie } from './../models/movie.model';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs';
+import { IMovieResponse } from '../models/reponse.model';
 
 const URL = environment.moviesAPIURL;
 
@@ -22,8 +23,8 @@ export class MovieDetailService {
     this._movie = undefined;
 
     this.http
-      .get<IMovieDetailResponse>(`${URL}/${movieId}`)
-      .pipe(map((response: IMovieDetailResponse) => response.data))
+      .get<IMovieResponse<IMovie>>(`${URL}/${movieId}`)
+      .pipe(map((response: IMovieResponse<IMovie>) => response.data))
       .subscribe({
         next: (movie: IMovie) => {
           this._movie = movie;

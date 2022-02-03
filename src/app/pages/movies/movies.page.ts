@@ -14,6 +14,10 @@ export class MoviesPage implements OnInit {
     return this.moviesService.movies;
   }
 
+  get username(): string {
+    return this.userService.username;
+  }
+
   constructor(
     private moviesService: MoviesService,
     private userService: UserService,
@@ -24,7 +28,7 @@ export class MoviesPage implements OnInit {
     this.moviesService.findAllMovies();
   }
 
-  onMovieClick(movie: IMovie) {
-    
+  onGoToMovie(movie: IMovie) {
+    this.router.navigate(['/movies', movie.id]);
   }
 }

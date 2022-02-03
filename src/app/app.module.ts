@@ -11,6 +11,7 @@ import { MovieListItemComponent } from './components/movie-list-item/movie-list-
 import { MoviesPage } from './pages/movies/movies.page';
 import { LoginPage } from './pages/login/login.page';
 import { MovieDetailPage } from './pages/movie-detail/movie-detail.page';
+import { RegisterPage } from './pages/register/register.page';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MovieDetailPage } from './pages/movie-detail/movie-detail.page';
     MoviesPage,
     LoginPage,
     MovieDetailPage,
+    RegisterPage,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

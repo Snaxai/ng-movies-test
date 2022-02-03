@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { IMovie, IMovieResponse } from '../models/movie.model';
+import { IMovie } from '../models/movie.model';
 import { HttpClient } from '@angular/common/http';
 import { finalize, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IMovieResponse } from '../models/reponse.model';
 
 const URL = environment.moviesAPIURL
 
@@ -26,10 +27,10 @@ export class MoviesService {
   findAllMovies(): void {
     this._loading = true;
     this.http
-      .get<IMovieResponse>(URL)
+      .get<IMovieResponse<IMovie[]>>(URL + "/movies")
       // RxJS Operators
       .pipe(
-        map((response: IMovieResponse) => {
+        map((response: IMovieResponse<IMovie[]>) => {
           return response.data;
         }),
         finalize(() => {
